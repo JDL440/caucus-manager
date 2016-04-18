@@ -6,6 +6,7 @@ Goals for the first version:
 General goals
 Simplicity of design and ease of use
 Supports disconnected/offline use and easy central reconciliation
+Uses open source technology for free/low cost of use
 
 Precinct Caucus manager
 Allow data entry of voter information
