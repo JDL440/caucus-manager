@@ -1,0 +1,24 @@
+<h1>Listing citizens</h1>
+ 
+<%= link_to 'New citizen', new_citizen_path %>
+ 
+<table>
+  <tr>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>Candidate</th>
+  </tr>
+ 
+  <% @citizens.each do |citizen| %>
+    <tr>
+      <td><%= citizen.firstname %></td>
+      <td><%= citizen.lastname %></td>
+      <td><%= citizen.candidate %></td>
+      <td><%= link_to 'Show', citizen_path(citizen) %></td>
+      <td><%= link_to 'Edit', edit_citizen_path(citizen) %></td>    
+      <td><%= link_to 'Destroy', citizen_path(citizen),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>  
+    </tr>
+  <% end %>
+</table>

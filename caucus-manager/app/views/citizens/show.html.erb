@@ -1,0 +1,18 @@
+
+<p>
+  <strong>FirstName:</strong>
+  <%= @citizen.firstname %>
+</p>
+ 
+ <p>
+  <strong>LastName:</strong>
+  <%= @citizen.lastname %>
+</p>
+ 
+<p>
+  <strong>Candidate:</strong>
+  <%= @citizen.candidate %>
+</p>
+
+<%= link_to 'Edit', edit_citizen_path(@citizen) %> |
+<%= link_to 'Back', citizens_path %>

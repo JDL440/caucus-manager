@@ -1,0 +1,45 @@
+<h1>Editing citizen</h1>
+ 
+<!-- TODO: Add partials
+<%= render 'form' %>
+--> 
+ 
+<%= form_for :citizen, url: citizen_path(@citizen), method: :patch do |f| %>
+ 
+  <% if @citizen.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@citizen.errors.count, "error") %> prohibited
+        this citizen from being saved:
+      </h2>
+      <ul>
+        <% @citizen.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+  </p>
+ 
+   <p>
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </p>
+ 
+  <p>
+    <%= f.label :candidate %><br>
+    <%= f.text_field :candidate %>
+  </p>
+
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', citizen_path %>

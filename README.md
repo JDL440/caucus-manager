@@ -1,44 +1,62 @@
 # caucus-manager
+
 Caucus manager is software to manage presidential caucuses like the democratic precinct and legislative district caucuses held in Washington state in 2016.
 
-Goals for the first version:
+### See wiki tab on GitHub page for goals
 
-General goals
+### Getting Started on Windows
 
-Simplicity of design and ease of use
++ Install [Ruby 2.2.4] (http://rubyinstaller.org/downloads/)
 
-Supports disconnected/offline use and easy central reconciliation
+Install Ruby and download and extract the devKit to C:\DevKit
 
-Uses open source technology for free/low cost of use
+Open the CMD prompt to c:\DevKit and install
+```
+ruby dk.rb init
+ruby dk.rb install
+```
 
-Precinct Caucus manager
++ Install [SQLite3] (http://www.sqlite.org/download.html)
 
-Allow data entry of voter information
+Extract both the precompiled binaries and the command line tools to C:\SQLITE and add C:\SQLITE to your PATH
 
-Supports capturing initial and final presidential preference
++ Clone this GitHub Rep (ie C:\Git\caucus-manager)
 
-Automatically calculates number of delegates won by each candidate (requires precinct to enter number of total delegates elected)
++ Install Rails
+```
+cd c:\Git\caucus-manager 
+gem install rails
+```
 
-Allows marking voters as elected delegates or alternates (alternates include number)
++ Set up your local repo
+  + Fork the repository by hitting the "Fork" button on the shescoding github page
+  + Clone the repository:
 
-Legislative Caucus Manager
+    ```
+    git clone https://github.com/<your_github_username>/caucus-manager.git
+    ```
+  + Add the upstream repository:
 
-Consolidates delegate and alternate data from precinct caucus manager
+    ```
+    git remote add upstream https://github.com/JDL440/caucus-manager.git
+    ```
 
-Handles sign-in of delegates and alternates (must be fast and able to be distributed accross multiple sign in stations)
++ Load all the gems:
+  ```
+  bundle install
+  ```
 
-Produces preliminary credentials report of total signed in delegates and alternates by candidate and congressional district
++ Run database migrations: (Not yet implemented)
+  ```
+  rake db:migrate
+  ```
 
-Produces a report of signed in alternates that are eligible to replace a missing delegate and tracks the replacement of delegate by an alternate (Multi-step process, first by precinct, then congressional district, then all)
++ Start the Rails server:
+  ```
+  rails s
+  ```
 
-Produces final credentials report of total signed in delegates by candidate and congressional district and breakdown of congressional delegates awarded by district and candidate.
++ Visit the project at [localhost:3000](http://localhost:3000)
 
-(lower priority) Facilitates in tallying of CD delegate votes 
-
-Allows marking LD delegates as elected CD delegates and alternates
-
-Produces affirmative action report
-
-Congressional Caucus manager
-
-Similar to LD caucus manager?
++ Editor
+You can use any code editor you like, but I use [VS Code] (http://code.visualstudio.com)
