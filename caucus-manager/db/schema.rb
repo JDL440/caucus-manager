@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423050123) do
+ActiveRecord::Schema.define(version: 20160424014328) do
 
   create_table "citizens", force: :cascade do |t|
     t.string   "firstname"
@@ -19,6 +19,28 @@ ActiveRecord::Schema.define(version: 20160423050123) do
     t.string   "candidate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "congressional_districts", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "numberOfDelegates"
+    t.integer  "numberOfAlternates"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "legislative_districts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "precincts", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "numberOfDelegates"
+    t.integer  "numberOfAlternates"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end

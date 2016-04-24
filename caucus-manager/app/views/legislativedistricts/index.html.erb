@@ -1,0 +1,20 @@
+<h1>Listing legislativedistricts</h1>
+ 
+<%= link_to 'New legislativedistrict', new_legislativedistrict_path %>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+ 
+  <% @legislativedistricts.each do |legislativedistrict| %>
+    <tr>
+      <td><%= legislativedistrict.name %></td>
+      <td><%= link_to 'Show', legislativedistrict_path(legislativedistrict) %></td>
+      <td><%= link_to 'Edit', edit_legislativedistrict_path(legislativedistrict) %></td>    
+      <td><%= link_to 'Destroy', legislativedistrict_path(legislativedistrict),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>  
+    </tr>
+  <% end %>
+</table>

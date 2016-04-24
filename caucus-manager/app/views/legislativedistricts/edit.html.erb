@@ -1,0 +1,16 @@
+<h1>Editing legislative district</h1>
+  
+<%= form_for :legislativedistrict, url: legislativedistrict_path(@legislativedistrict), method: :patch do |f| %>
+  
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', legislativedistrict_path %>

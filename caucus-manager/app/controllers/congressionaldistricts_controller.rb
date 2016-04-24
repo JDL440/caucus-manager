@@ -1,0 +1,2 @@
+class CongressionaldistrictsController < ApplicationController
+end
