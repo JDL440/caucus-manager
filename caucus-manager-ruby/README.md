@@ -46,7 +46,7 @@ gem install rails
   bundle install
   ```
 
-+ Run database migrations: (Not yet implemented)
++ Run database migrations: 
   ```
   rake db:migrate
   ```
