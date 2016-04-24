@@ -15,5 +15,10 @@
   <%= @citizen.candidate %>
 </p>
 
+<p>
+  <strong>Precinct:</strong>
+  <%= @citizen.precinct_id %>
+</p>
+
 <%= link_to 'Edit', edit_citizen_path(@citizen) %> |
 <%= link_to 'Back', citizens_path %>
