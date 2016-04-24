@@ -1,0 +1,15 @@
+<h1>New Precinct</h1>
+
+<%= form_for :precinct, url: precincts_path do |f| %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', precincts_path %>

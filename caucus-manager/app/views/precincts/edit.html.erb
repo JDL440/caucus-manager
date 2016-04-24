@@ -1,0 +1,16 @@
+<h1>Editing precinct</h1>
+  
+<%= form_for :precinct, url: precinct_path(@precinct), method: :patch do |f| %>
+  
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', precinct_path %>

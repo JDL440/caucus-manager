@@ -1,0 +1,16 @@
+<h1>Editing congressional district</h1>
+  
+<%= form_for :congressionaldistrict, url: congressionaldistrict_path(@congressionaldistrict), method: :patch do |f| %>
+  
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', congressionaldistrict_path %>

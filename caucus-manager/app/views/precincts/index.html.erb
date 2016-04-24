@@ -1,0 +1,20 @@
+<h1>Listing precincts</h1>
+ 
+<%= link_to 'New precinct', new_precinct_path %>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+ 
+  <% @precincts.each do |precinct| %>
+    <tr>
+      <td><%= precinct.name %></td>
+      <td><%= link_to 'Show', precinct_path(precinct) %></td>
+      <td><%= link_to 'Edit', edit_precinct_path(precinct) %></td>    
+      <td><%= link_to 'Destroy', precinct_path(precinct),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>  
+    </tr>
+  <% end %>
+</table>
