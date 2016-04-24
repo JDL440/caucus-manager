@@ -11,14 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424014328) do
+ActiveRecord::Schema.define(version: 20160424214753) do
 
   create_table "citizens", force: :cascade do |t|
     t.string   "firstname"
     t.string   "lastname"
     t.string   "candidate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.boolean  "ld_delegate"
+    t.integer  "ld_alternate_number"
+    t.boolean  "ld_checked_in"
+    t.boolean  "ld_seated_alternate"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "city"
+    t.string   "zip"
   end
 
   create_table "congressional_districts", force: :cascade do |t|
