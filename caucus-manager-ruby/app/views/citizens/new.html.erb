@@ -36,8 +36,13 @@
   </p>
   
   <p>
-    <%= f.label :precinct %><br>
-    <%= f.text_field :precinct %>
+    <%= f.label :precinct %><br>    
+    <%= f.collection_select(:precinct_id, Precinct.all, :id, :name) %>
+  </p>
+  
+  <p>
+    <%= f.label :telephone %><br>
+    <%= f.telephone_field :phone %>
   </p>
  
   <p>

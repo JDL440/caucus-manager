@@ -47,6 +47,6 @@ class CitizensController < ApplicationController
     
     private
     def citizen_params
-        params.require(:citizen).permit(:firstname, :lastname, :candidate, :precinct_id)
+        params.require(:citizen).permit(:firstname, :lastname, :candidate, :precinct_id, :phone, :email, :address, :city, :zip, :ld_delegate, :ld_alternate_number, :ld_checked_in, :ld_seated_alternate)
     end
 end
