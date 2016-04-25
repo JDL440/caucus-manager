@@ -2,19 +2,21 @@
  
 <%= link_to 'New congressional district', new_congressionaldistrict_path %>
  
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
- 
-  <% @congressionaldistricts.each do |congressionaldistrict| %>
+<div class="table-responsive">
+  <table class="table table-striped">
     <tr>
-      <td><%= congressionaldistrict.name %></td>
-      <td><%= link_to 'Show', congressionaldistrict_path(congressionaldistrict) %></td>
-      <td><%= link_to 'Edit', edit_congressionaldistrict_path(congressionaldistrict) %></td>    
-      <td><%= link_to 'Destroy', congressionaldistrict_path(congressionaldistrict),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>  
+      <th>Name</th>
     </tr>
-  <% end %>
-</table>
+  
+    <% @congressionaldistricts.each do |congressionaldistrict| %>
+      <tr>
+        <td><%= congressionaldistrict.name %></td>
+        <td><%= link_to 'Show', congressionaldistrict_path(congressionaldistrict) %></td>
+        <td><%= link_to 'Edit', edit_congressionaldistrict_path(congressionaldistrict) %></td>    
+        <td><%= link_to 'Destroy', congressionaldistrict_path(congressionaldistrict),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>  
+      </tr>
+    <% end %>
+  </table>
+</div>

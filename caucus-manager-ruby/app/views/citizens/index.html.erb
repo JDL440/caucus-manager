@@ -2,23 +2,45 @@
  
 <%= link_to 'New citizen', new_citizen_path %>
  
-<table>
-  <tr>
-    <th>FirstName</th>
-    <th>LastName</th>
-    <th>Candidate</th>
-  </tr>
- 
-  <% @citizens.each do |citizen| %>
+<div class="table-responsive">
+  <table class="table table-striped">
     <tr>
-      <td><%= citizen.firstname %></td>
-      <td><%= citizen.lastname %></td>
-      <td><%= citizen.candidate %></td>
-      <td><%= link_to 'Show', citizen_path(citizen) %></td>
-      <td><%= link_to 'Edit', edit_citizen_path(citizen) %></td>    
-      <td><%= link_to 'Destroy', citizen_path(citizen),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>  
+      <th>Checked-in</th>
+      <th>Precinct</th>
+      <th>Congressional District</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Candidate</th>
+      <th>Delegate</th>
+      <th>Alternate number</th>
+      <th>Alternate seated</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Zip</th>
     </tr>
-  <% end %>
-</table>
+  
+    <% @citizens.each do |citizen| %>
+      <tr>
+        <td><%= citizen.ld_checked_in %></td>
+        <td></td>
+        <td></td>
+        <td><%= citizen.firstname %></td>
+        <td><%= citizen.lastname %></td>
+        <td><%= citizen.candidate %></td>
+        <td><%= citizen.ld_delegate %></td>
+        <td><%= citizen.ld_alternate_number %></td>
+        <td><%= citizen.ld_seated_alternate %></td>
+        <td><%= citizen.phone %></td>
+        <td><%= citizen.address %></td>
+        <td><%= citizen.city %></td>
+        <td><%= citizen.zip %></td>
+        <td><%= link_to 'Show', citizen_path(citizen) %></td>
+        <td><%= link_to 'Edit', edit_citizen_path(citizen) %></td>    
+        <td><%= link_to 'Destroy', citizen_path(citizen),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>  
+      </tr>
+    <% end %>
+  </table>
+</div>

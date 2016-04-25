@@ -1,4 +1,3 @@
-<%= form_for :citizen do |f| %>
 
   <% if @citizen.errors.any? %>
     <div id="error_explanation">
@@ -29,7 +28,17 @@
     <%= f.text_field :candidate %>
   </p>
  
+   
+  <p>
+    <%= f.label :precinct %><br>    
+    <%= f.collection_select(:precinct_id, Precinct.all, :id, :name) %>
+  </p>
+  
+  <p>
+    <%= f.label :telephone %><br>
+    <%= f.telephone_field :phone %>
+  </p>
+ 
   <p>
     <%= f.submit %>
   </p>
-<% end %>

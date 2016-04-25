@@ -1,11 +1,7 @@
 <h1>Editing citizen</h1>
  
-<!-- TODO: Add partials
-<%= render 'form' %>
---> 
- 
 <%= form_for :citizen, url: citizen_path(@citizen), method: :patch do |f| %>
- 
+
   <% if @citizen.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -19,30 +15,71 @@
       </ul>
     </div>
   <% end %>
- 
-  <p>
-    <%= f.label :firstname %><br>
+
+  <div class="field form-group">
+    <%= f.label :firstname %><br>    
     <%= f.text_field :firstname %>
-  </p>
+  </div>
  
-   <p>
+  <div class="field form-group">
     <%= f.label :lastname %><br>
     <%= f.text_field :lastname %>
-  </p>
+  </div>
  
-  <p>
+  <div class="field form-group">
     <%= f.label :candidate %><br>
     <%= f.text_field :candidate %>
-  </p>
-  
-  <p>
-    <%= f.label :precinct_id %><br>
-    <%= f.text_field :precinct_id %>
-  </p>
+  </div>
  
-  <p>
+  <div class="field form-group">
+    <%= f.label :precinct %><br>    
+    <%= f.collection_select(:precinct_id, Precinct.all, :id, :name) %>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :telephone %><br>
+    <%= f.telephone_field :phone %>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :zip %><br>
+    <%= f.text_field :zip %>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :ld_delegate %><br>
+    <%= f.text_field :ld_delegate %>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :ld_alternate_number %><br>
+    <%= f.text_field :ld_alternate_number %>
+  </div>
+ 
+  <div class="field form-group">
+    <%= f.label :ld_checked_in %><br>
+    <%= f.text_field :ld_checked_in %>
+  </div> 
+  
+  <div class="field form-group">
+    <%= f.label :ld_seated_alternate %><br>
+    <%= f.text_field :ld_seated_alternate %>
+  </div>
+ 
+ 
+  <div class="actions form-group">
     <%= f.submit %>
-  </p>
+  </div>
  
 <% end %>
  
