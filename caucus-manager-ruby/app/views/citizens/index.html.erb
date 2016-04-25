@@ -21,9 +21,10 @@
     </tr>
   
     <% @citizens.each do |citizen| %>
+   
       <tr>
         <td><%= citizen.ld_checked_in %></td>
-        <td></td>
+        <td><%= citizen.precinct.name if citizen.precinct %></td>
         <td></td>
         <td><%= citizen.firstname %></td>
         <td><%= citizen.lastname %></td>
