@@ -2,14 +2,20 @@
 
 <%= form_for :precinct, url: precincts_path do |f| %>
 
-  <p>
+  <div class="field form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </p>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label :congressionaldistrict %><br>    
+    <%= f.collection_select(:congressionaldistrict_id, CongressionalDistrict.all, :id, :name) %>
+  </div>
  
-  <p>
+  <div class="actions form-group">
     <%= f.submit %>
-  </p>
+  </div>
+  
 <% end %>
 
 <%= link_to 'Back', precincts_path %>

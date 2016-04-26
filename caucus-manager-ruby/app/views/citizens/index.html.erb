@@ -25,7 +25,7 @@
       <tr>
         <td><%= citizen.ld_checked_in %></td>
         <td><%= citizen.precinct.name if citizen.precinct %></td>
-        <td></td>
+        <td><%= citizen.precinct.congressional_district.name if citizen.precinct.congressional_district %></td>
         <td><%= citizen.firstname %></td>
         <td><%= citizen.lastname %></td>
         <td><%= citizen.candidate %></td>

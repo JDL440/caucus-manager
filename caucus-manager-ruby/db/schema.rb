@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424215241) do
+ActiveRecord::Schema.define(version: 20160426040915) do
 
   create_table "citizens", force: :cascade do |t|
     t.string   "firstname"
@@ -51,8 +51,11 @@ ActiveRecord::Schema.define(version: 20160424215241) do
     t.string   "name"
     t.integer  "numberOfDelegates"
     t.integer  "numberOfAlternates"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "congressionaldistrict_id"
   end
+
+  add_index "precincts", ["congressionaldistrict_id"], name: "index_precincts_on_congressionaldistrict_id"
 
 end

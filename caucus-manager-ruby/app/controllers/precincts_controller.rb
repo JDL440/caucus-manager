@@ -47,6 +47,6 @@ class PrecinctsController < ApplicationController
     
     private
     def precinct_params
-        params.require(:precinct).permit(:name)
+        params.require(:precinct).permit(:name, :congressionaldistrict_id)
     end
 end

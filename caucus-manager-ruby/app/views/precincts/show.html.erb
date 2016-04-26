@@ -1,9 +1,15 @@
 <h1>Precinct</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @precinct.name %>
-</p>
+<div>
+  <div>
+    <strong>Name:</strong>
+    <%= @precinct.name %>
+  </div>
+  <div>
+    <strong>Congressional District:</strong>
+    <%= @precinct.congressional_district.name if @precinct.congressional_district %>
+  </div>
+</div>
  
 
 <%= link_to 'Edit', edit_precinct_path(@precinct) %> |

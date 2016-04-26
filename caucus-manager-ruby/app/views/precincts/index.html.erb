@@ -6,11 +6,13 @@
   <table class="table table-striped">
     <tr>
       <th>Name</th>
+      <th>Congressional District</th>
     </tr>
   
     <% @precincts.each do |precinct| %>
       <tr>
         <td><%= precinct.name %></td>
+        <td><%= precinct.congressional_district.name if precinct.congressional_district %></td>
         <td><%= link_to 'Show', precinct_path(precinct) %></td>
         <td><%= link_to 'Edit', edit_precinct_path(precinct) %></td>    
         <td><%= link_to 'Destroy', precinct_path(precinct),
