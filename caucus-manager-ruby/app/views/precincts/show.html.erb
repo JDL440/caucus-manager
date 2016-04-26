@@ -6,9 +6,13 @@
     <%= @precinct.name %>
   </div>
   <div>
+    <strong>Legislative District:</strong>
+    <%= @precinct.legislative_district.name if @precinct.legislative_district %>
+  </div>
+  <div>
     <strong>Congressional District:</strong>
     <%= @precinct.congressional_district.name if @precinct.congressional_district %>
-  </div>
+  </div>  
 </div>
  
 

@@ -8,6 +8,11 @@
   </div>
   
   <div class="field form-group">
+    <%= f.label :"Legislative district" %><br>    
+    <%= f.collection_select(:legislativedistrict_id, LegislativeDistrict.all, :id, :name) %>
+  </div>
+  
+  <div class="field form-group">
     <%= f.label :"Congressional district" %><br>    
     <%= f.collection_select(:congressionaldistrict_id, CongressionalDistrict.all, :id, :name) %>
   </div>

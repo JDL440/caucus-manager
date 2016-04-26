@@ -1,3 +1,3 @@
 class CongressionalDistrict < ActiveRecord::Base
-    has_many :precincts
+    has_many :precincts    
 end
