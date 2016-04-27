@@ -29,7 +29,7 @@ gem install rails
 ```
 
 + Set up your local repo
-  + Fork the repository by hitting the "Fork" button on the shescoding github page
+  + Fork the repository by hitting the "Fork" button on the caucus-manager github page
   + Clone the repository:
 
     ```
