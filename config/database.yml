@@ -14,6 +14,8 @@ default: &default
 development:
   <<: *default
   database: caucusmanager_dev
+  username: postgres
+  password: Manager-2016
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,7 +23,11 @@ development:
 test:
   <<: *default
   database: caucusmanager_test
+  username: postgres
+  password: Manager-2016
 
 production:
   <<: *default
-  database: caucusmanager_prod
+  database: d1ijogp26lgtm1
+  username: hfweknrnnmretf
+  password: iH-HV4jhPCuS52CrCgxQ_XtzKP
