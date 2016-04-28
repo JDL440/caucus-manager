@@ -16,9 +16,9 @@ ruby dk.rb init
 ruby dk.rb install
 ```
 
-+ Install [SQLite3] (http://www.sqlite.org/download.html)
++ Install [PostgreSQL] (http://www.enterprisedb.com/products-services-training/pgdownload#windows)
 
-Extract both the precompiled binaries and the command line tools to C:\SQLITE and add C:\SQLITE to your PATH
+Install PostgreSQL and add the bin directory path like C:\Program Files (x86)\PostgreSQL\9.5\bin to your PATH
 
 + Clone this GitHub Rep (ie C:\Git\caucus-manager)
 

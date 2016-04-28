@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160426044533) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "citizens", force: :cascade do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160426044533) do
     t.integer  "precinct_id"
   end
 
-  add_index "citizens", ["precinct_id"], name: "index_citizens_on_precinct_id"
+  add_index "citizens", ["precinct_id"], name: "index_citizens_on_precinct_id", using: :btree
 
   create_table "congressional_districts", force: :cascade do |t|
     t.string   "name"
@@ -51,13 +54,16 @@ ActiveRecord::Schema.define(version: 20160426044533) do
     t.string   "name"
     t.integer  "numberOfDelegates"
     t.integer  "numberOfAlternates"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "congressionaldistrict_id"
-    t.integer  "legislativedistrict_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "congressional_district_id"
+    t.integer  "legislative_district_id"
   end
 
-  add_index "precincts", ["congressionaldistrict_id"], name: "index_precincts_on_congressionaldistrict_id"
-  add_index "precincts", ["legislativedistrict_id"], name: "index_precincts_on_legislativedistrict_id"
+  add_index "precincts", ["congressional_district_id"], name: "index_precincts_on_congressional_district_id", using: :btree
+  add_index "precincts", ["legislative_district_id"], name: "index_precincts_on_legislative_district_id", using: :btree
 
+  add_foreign_key "citizens", "precincts"
+  add_foreign_key "precincts", "congressional_districts"
+  add_foreign_key "precincts", "legislative_districts"
 end
