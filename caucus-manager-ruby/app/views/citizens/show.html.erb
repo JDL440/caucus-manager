@@ -1,24 +1,44 @@
-<h1>Citizen<h1>
+<h1>Citizen detail</h1>
 
-<p>
-  <strong>FirstName:</strong>
-  <%= @citizen.firstname %>
-</p>
- 
- <p>
-  <strong>LastName:</strong>
-  <%= @citizen.lastname %>
-</p>
- 
-<p>
+<% if @citizen.ld_checked_in %>	
+  <h2><p class="bg-success"><%= @citizen.firstname %> <%= @citizen.lastname %> Checked in</p></h2>   									
+<% else %>		
+  <h2><p class="bg-danger"><%= @citizen.firstname %> <%= @citizen.lastname %> Checked out</p></h2>    	
+<% end %>   
+
+<div>
   <strong>Candidate:</strong>
   <%= @citizen.candidate %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Precinct:</strong>
-  <%= @citizen.precinct_id %>
-</p>
+  <%= @citizen.precinct.name if @citizen.precinct %>
+</div>
+
+<div>
+  <strong>LD Delegate:</strong>
+  <%= @citizen.ld_delegate %>
+</div>
+
+<div>
+  <strong>LD Alternate number:</strong>
+  <%= @citizen.ld_alternate_number %>
+</div>
+
+<div>
+  <strong>Seated LD Alternate:</strong>
+  <%= @citizen.ld_seated_alternate %>
+</div>
+
+<div>
+  <strong>Address:</strong> <br>
+  <%= @citizen.address %> <br>
+  <%= @citizen.city %> <br>
+  <%= @citizen.zip %> <br>
+  <%= @citizen.phone %> <br>
+</div>
+
 
 <%= link_to 'Edit', edit_citizen_path(@citizen) %> |
 <%= link_to 'Back', citizens_path %>
