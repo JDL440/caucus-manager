@@ -9,12 +9,12 @@
   
   <div class="field form-group">
     <%= f.label :"Legislative district" %><br>    
-    <%= f.collection_select(:legislativedistrict_id, LegislativeDistrict.all, :id, :name) %>
+    <%= f.collection_select(:legislative_district_id, LegislativeDistrict.all, :id, :name) %>
   </div>
   
   <div class="field form-group">
     <%= f.label :congressionaldistrict %><br>    
-    <%= f.collection_select(:congressionaldistrict_id, CongressionalDistrict.all, :id, :name) %>
+    <%= f.collection_select(:congressional_district_id, CongressionalDistrict.all, :id, :name) %>
   </div>
  
   <div class="actions form-group">

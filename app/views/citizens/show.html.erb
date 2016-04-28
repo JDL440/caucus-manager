@@ -1,9 +1,9 @@
 <h1>Citizen detail</h1>
 
 <% if @citizen.ld_checked_in %>	
-  <h2><p class="bg-success"><%= @citizen.firstname %> <%= @citizen.lastname %> Checked in</p></h2>   									
+  <h2><p class="bg-success"><%= @citizen.firstname %> <%= @citizen.lastname %>: Checked in</p></h2>   									
 <% else %>		
-  <h2><p class="bg-danger"><%= @citizen.firstname %> <%= @citizen.lastname %> Checked out</p></h2>    	
+  <h2><p class="bg-danger"><%= @citizen.firstname %> <%= @citizen.lastname %>: Not Checked in</p></h2>    	
 <% end %>   
 
 <div>
