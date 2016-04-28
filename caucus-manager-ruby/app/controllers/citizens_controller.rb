@@ -30,7 +30,7 @@ class CitizensController < ApplicationController
     
     def update
         @citizen = Citizen.find(params[:id])
-        
+                
         if @citizen.update(citizen_params)
             redirect_to @citizen
         else
@@ -43,6 +43,24 @@ class CitizensController < ApplicationController
         @citizen.destroy
  
         redirect_to citizens_path
+    end
+    
+    def checkin
+        @citizen = Citizen.find(params[:id])
+        
+        @citizen.ld_checked_in = true
+        @citizen.save()
+        
+        redirect_to @citizen        
+    end
+    
+    def checkout
+        @citizen = Citizen.find(params[:id])
+        
+        @citizen.ld_checked_in = false
+        @citizen.save()
+        
+        redirect_to @citizen        
     end
     
     private

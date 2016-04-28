@@ -5,6 +5,7 @@
 <div class="table-responsive">
   <table class="table table-striped">
     <tr>
+      <th>Action</th>
       <th>Checked-in</th>
       <th>Precinct</th>
       <th>Congressional District</th>
@@ -23,6 +24,17 @@
     <% @citizens.each do |citizen| %>
    
       <tr>
+        <td>
+					<% if !citizen.ld_checked_in %>	
+            <%= form_for :citizen, url: checkin_citizen_path(citizen), method: :patch do |f| %>	
+              <%= f.button "Check-in", :action => "checkin" , :method => :patch, class: "btn btn-primary", id:"checkin" %>
+            <% end %>  									
+					<% else %>		
+            <%= form_for :citizen, url: checkout_citizen_path(citizen), method: :patch do |f| %>											
+						  <%= f.button "Check-out", :action => "checkout" , :method => :patch, class: "btn btn-primary", id:"checout" %>			
+            <% end %>  	
+					<% end %>                                       
+        </td>
         <td><%= citizen.ld_checked_in %></td>
         <td><%= citizen.precinct.name if citizen.precinct %></td>
         <td><%= citizen.precinct.congressional_district.name if citizen.precinct.congressional_district %></td>
