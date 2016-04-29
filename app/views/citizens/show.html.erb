@@ -6,6 +6,12 @@
   <h2><p class="bg-danger"><%= @citizen.firstname %> <%= @citizen.lastname %>: Not Checked in</p></h2>    	
 <% end %>   
 
+<% if @citizen.ld_alternate_number != 0 and  @citizen.ld_seated_alternate %>	
+  <h3><p class="bg-success">Alternate Seated</p></h2>   									
+<% else %>		
+  <h3><p class="bg-danger">Alternate Not Seated</p></h2>     	
+<% end %>   
+
 <div>
   <strong>Candidate:</strong>
   <%= @citizen.candidate %>

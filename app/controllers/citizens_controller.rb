@@ -63,6 +63,28 @@ class CitizensController < ApplicationController
         redirect_to @citizen        
     end
     
+    def alternates
+        @citizens = Citizen.all
+    end
+    
+    def seat_alternate
+        @citizen = Citizen.find(params[:id])
+        
+        @citizen.ld_seated_alternate = true
+        @citizen.save()
+        
+        redirect_to @citizen        
+    end
+    
+    def remove_alternate
+        @citizen = Citizen.find(params[:id])
+        
+        @citizen.ld_seated_alternate = false
+        @citizen.save()
+        
+        redirect_to @citizen        
+    end
+    
     private
     def citizen_params
         params.require(:citizen).permit(:firstname, :lastname, :candidate, :precinct_id, :phone, :email, :address, :city, :zip, :ld_delegate, :ld_alternate_number, :ld_checked_in, :ld_seated_alternate)

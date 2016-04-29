@@ -15,9 +15,15 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :citizens do
+    collection do
+      get 'alternates'
+    end
+    
     member do
       patch 'checkin'
       patch 'checkout'
+      patch 'seat_alternate'
+      patch 'remove_alternate'
     end
   end
   
