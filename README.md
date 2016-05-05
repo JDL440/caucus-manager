@@ -18,6 +18,8 @@ ruby dk.rb init
 ruby dk.rb install
 ```
 
++ Install [NodeJS] (https://nodejs.org/en/)
+
 + Install [PostgreSQL] (http://www.enterprisedb.com/products-services-training/pgdownload#windows)
 
 Install PostgreSQL and add the bin directory path like C:\Program Files (x86)\PostgreSQL\9.5\bin to your PATH
@@ -50,6 +52,7 @@ gem install rails
 
 + Run database migrations: 
   ```
+  rake db:create
   rake db:migrate
   ```
 
