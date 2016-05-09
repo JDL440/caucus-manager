@@ -26,6 +26,11 @@
     <%= f.text_field :lastname %>
   </div>
  
+ <div class="field form-group">
+    <%= f.label :gender %><br>    
+    <%= f.select :gender, options_for_select([['M'],['F']]) %>
+  </div>
+ 
   <div class="field form-group">
     <%= f.label :candidate %><br>
     <%= f.text_field :candidate %>

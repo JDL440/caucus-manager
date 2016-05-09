@@ -27,6 +27,11 @@
   </div>
  
   <div class="field form-group">
+    <%= f.label :gender %><br>    
+    <%= f.select :gender, ['M', 'F'] %>
+  </div>
+ 
+  <div class="field form-group">
     <%= f.label :candidate %><br>
     <%= f.text_field :candidate %>
   </div>

@@ -7,9 +7,11 @@
       <th>Delegate Name</th>    
       <th>Delegate Precinct</th>
       <th>Delegate CD</th>
+      <th>Gender</th>
       <th>Candidate</th>
       <th>Action</th>  
       <th>Alternate Name</th>
+      <th>Alternate Gender</th>
       <th>Alternate Number</th>
       <th>Alternate Precinct</th>
       <th>Alternate CD</th>
@@ -21,6 +23,7 @@
         <td><%= citizen.firstname %> <%= citizen.lastname %></td>
         <td><%= citizen.precinct.name if citizen.precinct %></td>
         <td><%= citizen.precinct.congressional_district.name if citizen.precinct.congressional_district %></td>
+        <td><%= citizen.gender %></td>
         <td><%= citizen.candidate %></td>
         <td>
           <% if !citizen.ld_seated_alternate %>	
@@ -33,7 +36,8 @@
             <% end %>  	
 		<% end %>                                       
         </td>
-        <td><%= citizen.firstname %> <%= citizen.lastname %></td>
+        <td><%= citizen.firstname %> <%= citizen.lastname %></td>\
+        <td><%= citizen.gender %></td>
         <td><%= citizen.precinct.name if citizen.precinct %></td>
         <td><%= citizen.precinct.congressional_district.name if citizen.precinct.congressional_district %></td>
         <td><%= citizen.candidate %></td>

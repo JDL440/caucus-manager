@@ -11,6 +11,7 @@
       <th>Congressional District</th>
       <th>FirstName</th>
       <th>LastName</th>
+      <th>Gender</th>
       <th>Candidate</th>
       <th>Delegate</th>
       <th>Alternate number</th>
@@ -37,9 +38,10 @@
         </td>
         <td><%= citizen.ld_checked_in %></td>
         <td><%= citizen.precinct.name if citizen.precinct %></td>
-        <td><%= citizen.precinct.congressional_district.name if citizen.precinct.congressional_district %></td>
+        <td><%= citizen.precinct.congressional_district.name if citizen.precinct and citizen.precinct.congressional_district %></td>
         <td><%= citizen.firstname %></td>
         <td><%= citizen.lastname %></td>
+        <td><%= citizen.gender %></td>
         <td><%= citizen.candidate %></td>
         <td><%= citizen.ld_delegate %></td>
         <td><%= citizen.ld_alternate_number %></td>
