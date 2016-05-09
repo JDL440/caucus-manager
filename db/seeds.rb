@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do |i|
+  CongressionalDistrict.where(name: "#{i+1}").first_or_create
+end
+
+49.times do |i|
+  LegislativeDistrict.where(name: "#{i+1}").first_or_create
+end
+
