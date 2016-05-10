@@ -84,7 +84,7 @@ class CitizensController < ApplicationController
         redirect_to @citizen        
     end
     
-    def export_citizen
+    def export
         @citizens = Citizen.all
 	    citizen_csv = CSV.generate do |csv|
             csv << ["First Name", "Last Name", "Gender", "LD", "CD", "Precinct", "Candidate", "LD Delegate", "LD Alternate Number", "Email", "Phone", "Address", "City", "Zip code", "Checked in", "Seated alternate"]
