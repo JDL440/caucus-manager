@@ -1,9 +1,8 @@
 <h1>Seating Alternates</h1>
- 
-
+<%= link_to 'All citizens', citizens_path %>
 <div class="table-responsive">
   <table class="table table-striped">
-    <tr>                  
+    <tr>
       <th>Delegate Name</th>    
       <th>Delegate Precinct</th>
       <th>Delegate CD</th>
@@ -16,35 +15,30 @@
       <th>Alternate Precinct</th>
       <th>Alternate CD</th>
     </tr>
-  
     <% @citizens.each do |citizen| %>
-   
       <tr>
         <td><%= citizen.firstname %> <%= citizen.lastname %></td>
         <td><%= citizen.precinct.name if citizen.precinct %></td>
-        <td><%= citizen.precinct.congressional_district.name if citizen.precinct.congressional_district %></td>
+        <td><%= citizen.precinct.congressional_district.name if citizen.precinct and citizen.precinct.congressional_district %></td>
         <td><%= citizen.gender %></td>
         <td><%= citizen.candidate %></td>
         <td>
-          <% if !citizen.ld_seated_alternate %>	
-            <%= form_for :citizen, url: seat_alternate_citizen_path(citizen), method: :patch do |f| %>	
+          <% if !citizen.ld_seated_alternate %>
+            <%= form_for :citizen, url: seat_alternate_citizen_path(citizen), method: :patch do |f| %>
               <%= f.button "Seat Alternate", :action => "seat_alternate" , :method => :patch, class: "btn btn-primary", id:"seat_alternate" %>
-            <% end %>  									
-          <% else %>		
-            <%= form_for :citizen, url: remove_alternate_citizen_path(citizen), method: :patch do |f| %>											
-              <%= f.button "Remove Alternate", :action => "remove_alternate" , :method => :patch, class: "btn btn-primary", id:"remove_alternate" %>			
-            <% end %>  	
-		<% end %>                                       
+            <% end %>
+          <% else %>
+            <%= form_for :citizen, url: remove_alternate_citizen_path(citizen), method: :patch do |f| %>
+              <%= f.button "Remove Alternate", :action => "remove_alternate" , :method => :patch, class: "btn btn-primary", id:"remove_alternate" %>
+            <% end %>
+		      <% end %>
         </td>
-        <td><%= citizen.firstname %> <%= citizen.lastname %></td>\
+        <td><%= citizen.firstname %> <%= citizen.lastname %></td>
         <td><%= citizen.gender %></td>
         <td><%= citizen.precinct.name if citizen.precinct %></td>
-        <td><%= citizen.precinct.congressional_district.name if citizen.precinct.congressional_district %></td>
+        <td><%= citizen.precinct.congressional_district.name if citizen.precinct and citizen.precinct.congressional_district %></td>
         <td><%= citizen.candidate %></td>
       </tr>
     <% end %>
   </table>
 </div>
-
-<%= link_to 'Back to all citizens', alternates_citizens_path %>
- 
