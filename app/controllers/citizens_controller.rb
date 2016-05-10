@@ -25,7 +25,6 @@ class CitizensController < ApplicationController
         else
             render 'new'
         end
-        #render plain: params[:citizen].inspect
     end
     
     def update
@@ -84,6 +83,17 @@ class CitizensController < ApplicationController
         
         redirect_to @citizen        
     end
+    
+    def export_citizen
+        @citizens = Citizen.all
+	    citizen_csv = CSV.generate do |csv|
+            csv << ["First Name", "Last Name", "Gender", "LD", "CD", "Precinct", "Candidate", "LD Delegate", "LD Alternate Number", "Email", "Phone", "Address", "City", "Zip code", "Checked in", "Seated alternate"]
+            @citizens.each do |citizen|
+                csv << [citizen.firstname, citizen.lastname, citizen.gender, citizen.precinct.legislative_district.name, citizen.precinct.congressional_district.name, citizen.precinct.name, citizen.candidate, citizen.ld_delegate, citizen.ld_alternate_number, citizen.email, citizen.phone, citizen.address, citizen.city, citizen.zip, citizen.ld_checked_in, citizen.ld_seated_alternate]     
+            end   
+        end    
+        send_data(citizen_csv, :type => 'text/csv', :filename => 'all_citizens.csv')
+    end    
     
     private
     def citizen_params

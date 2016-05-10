@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  
+  get '/citizens/export' => 'citizens#export_citizen'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   resources :citizens do
     collection do
       get 'alternates'
+      #get 'export_citizen'
     end
     
     member do
