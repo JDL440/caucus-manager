@@ -45,6 +45,10 @@ class LegislativedistrictsController < ApplicationController
         redirect_to legislativedistricts_path
     end
     
+    def credentials
+        @legislativedistricts = LegislativeDistrict.all
+    end
+    
     private
     def legislativedistrict_params
         params.require(:legislativedistrict).permit(:name)

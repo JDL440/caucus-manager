@@ -28,7 +28,12 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :legislativedistricts
+  resources :legislativedistricts do
+    collection do
+      get 'credentials'
+    end
+  end
+  
   resources :congressionaldistricts
   resources :precincts
 
