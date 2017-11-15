@@ -8,21 +8,15 @@ Caucus manager is software to manage presidential caucuses like the democratic p
 
 ### Getting Started on Windows
 
-+ Install [Ruby 2.2.4] (http://rubyinstaller.org/downloads/)
++ Install [Ruby 2.4.2] (http://rubyinstaller.org/downloads/)
 
-Install Ruby and download and extract the devKit to C:\DevKit
-
-Open the CMD prompt to c:\DevKit and install
-```
-ruby dk.rb init
-ruby dk.rb install
-```
+Install Ruby
 
 + Install [NodeJS] (https://nodejs.org/en/)
 
 + Install [PostgreSQL] (http://www.enterprisedb.com/products-services-training/pgdownload#windows)
 
-Install PostgreSQL and add the bin directory path like C:\Program Files (x86)\PostgreSQL\9.5\bin to your PATH
+Install PostgreSQL and add the bin directory path like C:\Program Files\PostgreSQL\10.0\bin to your PATH
 
 + Clone this GitHub Rep (ie C:\Git\caucus-manager)
 

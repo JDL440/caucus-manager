@@ -1,4 +1,4 @@
-class AddFieldsToCitizen < ActiveRecord::Migration
+class AddFieldsToCitizen < ActiveRecord::Migration[5.0]
   def change
     add_column :citizens, :ld_delegate, :boolean
     add_column :citizens, :ld_alternate_number, :integer
